@@ -1,0 +1,24 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+
+{% block content %}
+  <div id="about" class="about-container">
+    <div class="about-text text-start">
+      <h1>about</h1>
+      <p>Hi, I'm Kate Ryder, a recent graphic design graduate from Brisbane. I love 
+         the challenge of executing impactful creative solutions. My approach to design is multifaceted,
+         combining my studies in visual arts with my professional experience as a stylist.
+         When I'm not designing, I'm constructing words into engaging copy, or getting my hands dirty as 
+         <a href="https://www.instagram.com/honeyryder___/" target="_blank" rel="noopener noreferrer" class="social-link">@honeyryder</a>
+
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="{{ url_for('static', filename='assets/queen.jpg') }}" alt="Kate Ryder" class="about-image-img">
+    </div>
+  </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,262 @@
+:root {
+    --color1: #2d3b91;
+    --color2: #f9eee4;
+}
+
+body, h1 {
+    margin: 0;
+    padding: 0;
+    color: var(--color1);
+}
+
+@font-face {
+    font-family: 'Dunbar Tall Book';
+    src: url('/static/fonts/dunbar-tall-book.woff2') format('woff2'),
+         url('/static/fonts/dunbar-tall-book.woff') format('woff'),
+         url('/static/fonts/dunbar-tall-book.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Dunbar Tall Book';
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+#about {
+    text-align: center; /* Center the text */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 20px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    max-width: 60%; /* Adjust the width as needed */
+    margin: 0 auto;
+}
+
+.about-text {
+    max-width: 80%;
+    margin-top: 20px;
+    margin-bottom: 60px; 
+}
+
+.about-text h1 {
+    margin-bottom: 4rem; 
+}
+
+
+.about-image-img {
+    max-width: 85%;
+    height: auto;
+}
+
+.contact-h3 {
+    text-align: left;
+    justify-content: left;
+}
+
+.hr {
+    height: 7px;
+    background-color: var(--color2);    
+    max-width: 100%;
+}
+
+.email-link {    
+    color: var(--color2);
+    font-size: larger;
+}
+
+h1, h2 {
+    color: var(--color1);
+}
+
+p {
+    line-height: 1.5;
+}
+
+ul {    
+    margin: 0; 
+    padding: 0;
+    padding-left: 40px;
+}
+
+li {    
+    margin-bottom: 10px; 
+    padding-left: 10px; 
+    background-repeat: no-repeat; 
+    background-size: 10px; 
+    background-position: left center; 
+}
+
+.portfolio {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-width: 90%;   
+}
+
+.box h2 {
+    text-align: center;
+}
+
+.form {
+    max-width: 70%;
+    margin: 0 auto; 
+}
+
+.form-control {
+    width: 100%; 
+}
+
+/* Navbar styling */
+.navbar {   
+    margin-right: 20px;
+    border-bottom: none; /* Remove bottom border */
+    box-shadow: none; /* Remove any shadow effect */
+    padding: 1rem 2rem; /* Adjust padding */
+}
+
+/* Ensure the logo stays on the left */
+.navbar .navbar-brand img {
+    width: 150px;
+    height: auto;
+}
+
+/* Navbar items container */
+.navbar-nav {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Align navbar items horizontally */
+    justify-content: flex-end; /* Align items to the right */
+    margin-left: auto; /* Push the items to the right */
+}
+
+/* Navbar links */
+.navbar-nav .nav-item .nav-link {
+    color: var(--color1); 
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem; /* Add padding for clickable area */
+    transition: color 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: var(--color2);
+    background-color: var(--color1); /* White on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Responsive navbar toggler */
+.navbar-toggler {
+    border-color: var(--color2); /* Light Cream */
+}
+
+.navbar-toggler-icon {
+    background-color: var(--color2); /* Light Cream */
+}
+
+/* Navbar when expanded (links are aligned to the right) */
+.navbar-collapse {
+    justify-content: flex-end; /* Ensure links are aligned to the right */
+}
+
+/* Navbar item active state */
+.navbar-nav .nav-item.active .nav-link {
+    color: #fff; /* White for active link */
+    font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+    color: var(--color1);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust navbar for mobile */
+    .navbar-nav {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center;
+    }
+
+    /* Make the about container and text responsive */
+    .about-container {
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 90%;
+    }
+
+    /* Make image responsive */
+    .about-image-img {
+        max-width: 100%;
+    }
+}
+
+.social-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: var(--color1); /* Set the link color */    
+}
+
+.social-link:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */    
+}
+
+.about-divider {
+    width: 45%; /* Make the line shorter than the full width */
+    margin: 20px auto; /* Center the line horizontally */
+    border: none; /* Remove default border */
+    border-top: .5px solid var(--color1); /* Set the color and thickness of the line */
+}
+
+/* Social Media List */
+.social-links {
+    list-style-type: none; /* Remove bullets */
+    display: flex; /* Display items in a row */
+    justify-content: center; /* Center the list horizontally */
+    gap: 20px; /* Space between the icons */
+    margin: 20px 0; /* Space above and below the list */
+    padding: 0; /* Remove default padding */
+}
+
+.social-links li {
+    margin: 0; /* Remove default margin */
+}
+
+.social-links img {
+    width: 60px; /* Set the size of the social media icons */
+    height: 60px;
+    object-fit: cover; /* Ensure the images are not distorted */
+    transition: transform 0.3s ease; /* Smooth transition effect on hover */
+}
+
+.social-links img:hover {
+    transform: scale(1.3); /* Slightly increase the size of the icon on hover */
+}
+
+.about-text {
+    text-align: left;
+}
+
+
+footer .small {
+    font-size: 0.8rem; 
+}
+
+footer .text-white {
+    color: var(--color1); 
+    text-decoration: none; /* Removes underline from the link */
+}
+
+footer .text-white:hover {
+    text-decoration: underline; 
+}

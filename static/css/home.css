@@ -1,0 +1,140 @@
+:root {
+    --color1: rgb(45, 59, 145);
+    --color2: rgb(249, 238, 228);
+}
+
+body, h1 {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Dunbar Tall Book';
+    src: url('/static/fonts/dunbar-tall-book.woff2') format('woff2'),
+         url('/static/fonts/dunbar-tall-book.woff') format('woff'),
+         url('/static/fonts/dunbar-tall-book.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Dunbar Tall Book';
+    background-color: #2d3b91;
+    color:var(--color2);
+      
+}
+
+
+.hr {
+    height: 7px;
+    background-color:var(--color2);    
+    max-width: 100%;
+}
+
+.email-link {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--color2);
+    font-size: larger;
+    
+}
+
+.logo-container {
+    max-width: 60%;      
+}
+.hidden-h1{
+    color: var(--color1);
+
+}
+
+
+ul  {
+    list-style-image: url('bullet.webp');
+    margin: 0; 
+    padding: 0;
+    padding-left: 40px;
+}
+li {    
+    margin-bottom: 10px; 
+    padding-left: 10px; 
+    background-repeat: no-repeat; 
+    background-size: 10px; 
+    background-position: left center; 
+  }
+
+.portfolio {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-width: 90%;   
+}
+
+.box h2 {
+    text-align: center;
+}
+
+.form {
+    max-width: 70%;
+    margin: 0 auto; 
+}
+
+.form-control {
+    width: 100%; 
+}
+
+.nav-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  /*navigation */
+
+  .floating-nav {
+    margin-top: 20px;
+  }
+
+  .floating-nav a {
+    display: block;
+    font-size: 40px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    text-align: center;
+    background: var(--color1);
+    color: var(--color2);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.5s ease;
+  }
+
+  .floating-nav a:hover {
+    background: rgba(249, 238, 228,0.9);
+    color: var(--color1);
+    transform: scale(1.2);
+}
+
+
+
+.footer-link:hover {
+    color: var(--color2);
+}
+
+
+footer .small {
+    font-size: 0.8rem; /* Makes the small text smaller */
+}
+
+footer .text-white {
+    color: var(--color1); /* Change the link color (you can modify this value) */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+footer .text-white:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}

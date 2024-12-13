@@ -1,0 +1,44 @@
+
+@font-face {
+    font-family: 'Dunbar Tall Book';
+    src: url('/static/fonts/dunbar-tall-book.woff2') format('woff2'),
+         url('/static/fonts/dunbar-tall-book.woff') format('woff'),
+         url('/static/fonts/dunbar-tall-book.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Dunbar Tall Book', sans-serif;
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+/* Gallery container */
+.gallery-container {
+    position: relative;
+    overflow: hidden; /* Hide content outside the gallery bounds */
+    width: 100%; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* Black background for better contrast */
+}
+
+/* Gallery images aligned horizontally */
+.gallery {
+    display: flex; /* Align images horizontally */
+    transition: transform 0.4s ease; /* Smooth transition for swipes */
+    width: fit-content; /* Shrink to fit the content */
+    height: 100%; /* Full height of the container */
+}
+
+/* Image styling */
+.gallery img {
+    width: 100vw; /* Each image takes up the full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    flex-shrink: 0; /* Prevent images from shrinking */
+    object-fit: cover; /* Ensure images cover their container */
+    display: block; /* Removes inline spacing issues */
+}

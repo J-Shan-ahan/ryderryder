@@ -1,0 +1,24 @@
+<!-- templates/contact.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <div id="about" class="about-container">
+    <div class="about-text">
+      <a href="mailto:katejryder@outlook.com" target="_blank" rel="noopener noreferrer" class="social-link d-block mb-3">katejryder@outlook.com</a>
+    </div>
+
+    <hr class="about-divider">
+
+
+    <h3 class="smaller contact-h3">find me on</h3>
+    <ul class="social-links list-unstyled d-flex gap-3">
+      <li><a href="https://www.behance.net/ryderryder_" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='assets/blue_be.png') }}" alt="Behance"></a></li>
+      <li><a href="https://www.linkedin.com/in/katejryderdesigner/" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='assets/blue_linkedin.png') }}" alt="LinkedIn"></a></li>
+      <li><a href="https://www.instagram.com/ryderryderdotcom" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='assets/blue_instagram.png') }}" alt="Instagram"></a></li>
+    </ul>
+  </div>    
+{% endblock %}
+
+
+
+
