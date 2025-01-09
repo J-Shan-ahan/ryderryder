@@ -1,19 +1,26 @@
-<!-- templates/projects.html -->
 {% extends "base.html" %}
-<link href="{{ url_for('static', filename='css/gallery.css') }}?v={{ css_last_modified }}" rel="stylesheet">
 
+{% block css %} 
+<link href="{{ url_for('static', filename='css/gallery.css') }}?v={{ css_last_modified }}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
 <main>
-    <body>
-        <div class="gallery-container">
-            <div class="gallery">
-                {% for image in images %}
-                    <img src="{{ url_for('static', filename=image) }}" alt="Image {{ loop.index }}">
-                {% endfor %}
-            </div>
+
+    <!-- InstagramLogo -->
+
+    <h1 class="text-center">@honeyryder</h1>
+    <div class="gallery-container">
+        <div class="gallery">
+            {% for image in images %}
+                <img src="{{ url_for('static', filename=image) }}" alt="Image {{ loop.index }}">
+            {% endfor %}
         </div>
-        <script src="{{ url_for('static', filename='gallery.js') }}"></script>
-    </body>
+    </div>
+    <button class="prev-btn"></button>
+    <button class="next-btn"></button>
+    
 </main>
-{% endblock %} 
+<script src="{{ url_for('static', filename='gallery.js') }}"></script>
+
+{% endblock %}

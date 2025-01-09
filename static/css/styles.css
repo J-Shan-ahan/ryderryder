@@ -201,6 +201,14 @@ footer {
         max-width: 100%;
     }
 }
+.gallery-link {    
+    color: var(--color1); /* Set the link color */    
+}
+.gallery-link:hover {
+    transform: scale(2.5); /* Slightly increase the size of the icon on hover */
+    background-color: var(--color1);
+    color: var(--color2);
+}
 
 .social-link {
     text-decoration: none; /* Remove underline from the link */

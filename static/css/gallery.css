@@ -1,3 +1,7 @@
+:root {
+    --color1: #2d3b91;
+    --color2: #f9eee4;
+}
 
 @font-face {
     font-family: 'Dunbar Tall Book';
@@ -7,38 +11,73 @@
     font-weight: lighter;
     font-style: italic;
 }
-
 body {
-    font-family: 'Dunbar Tall Book', sans-serif;
-    background-color: var(--color2);
-    color: var(--color1);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-/* Gallery container */
+/* Make the gallery container take up most of the screen */
 .gallery-container {
-    position: relative;
-    overflow: hidden; /* Hide content outside the gallery bounds */
-    width: 100%; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000; /* Black background for better contrast */
+    width: 90%; /* Adjust to take up most of the screen */
+    height: 90vh; /* 90% of the viewport height */
+    position: relative;    
+    margin: auto; /* Center the gallery container */
+    /* border: 2px solid #2d3b91; Light border around the gallery            */
+    justify-content: center; /* Center the gallery horizontally */
 }
 
-/* Gallery images aligned horizontally */
+/* Style the gallery itself */
 .gallery {
-    display: flex; /* Align images horizontally */
-    transition: transform 0.4s ease; /* Smooth transition for swipes */
-    width: fit-content; /* Shrink to fit the content */
-    height: 100%; /* Full height of the container */
+    display: flex;        
+    height: 100%;    
+    position: center;
+    align-items: center;
+    justify-content: relative;
+    top: 0;
+    left: 0;
 }
 
-/* Image styling */
+/* Style each image inside the gallery */
 .gallery img {
-    width: 100vw; /* Each image takes up the full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
-    flex-shrink: 0; /* Prevent images from shrinking */
-    object-fit: cover; /* Ensure images cover their container */
-    display: block; /* Removes inline spacing issues */
+    width: 95%; /* Image will take full width of the container */
+    height: 95%; /* Image will take full height of the container */
+    object-fit: fit; /* Ensure the image covers the entire area while maintaining its aspect ratio */
+    margin: 0;
+    opacity: 0; /* Initially hide all images */
+    transition: opacity 0.5s ease-in-out; /* Fade transition */
+    position: absolute; /* Position them on top of each other */
+}
+
+.gallery img.active {
+    opacity: 1; /* Only the active image will be visible */
+}
+
+
+/* Add styling for navigation buttons */
+button.prev-btn, button.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color1);
+    color: var(--color1);
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+button.prev-btn {
+    left: 10px;
+}
+
+button.next-btn {
+    right: 10px;
+}
+
+/* Optional: Add hover effect on the buttons */
+button.prev-btn:hover, button.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
