@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block content %}
-<main>
-
-    <!-- InstagramLogo -->
-
-    <h1 class="text-center">@honeyryder</h1>
+<main>   
+    <h3>
+        <a href="https://www.instagram.com/ryderryderdotcom" target="_blank">
+            <i class="fab fa-instagram" style="padding-left:2rem;"></i> @honeyryder
+        </a>
+    </h3>
+   
+    
     <div class="gallery-container">
         <div class="gallery">
             {% for image in images %}
@@ -20,7 +23,12 @@
     <button class="prev-btn"></button>
     <button class="next-btn"></button>
     
+
 </main>
 <script src="{{ url_for('static', filename='gallery.js') }}"></script>
+
+
+
+
 
 {% endblock %}

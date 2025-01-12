@@ -12,72 +12,87 @@
     font-style: italic;
 }
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Dunbar Tall Book';
+    background-color: var(--color2);
+    color: var(--color1);
 }
 
-/* Make the gallery container take up most of the screen */
 .gallery-container {
-    width: 90%; /* Adjust to take up most of the screen */
-    height: 90vh; /* 90% of the viewport height */
-    position: relative;    
-    margin: auto; /* Center the gallery container */
-    /* border: 2px solid #2d3b91; Light border around the gallery            */
-    justify-content: center; /* Center the gallery horizontally */
+    width: 90%; /* Keep it centered and responsive */
+    height: 85vh; /* Total height including heading and gallery */
+    display: flex;
+    flex-direction: column; /* Stack heading and gallery vertically */
+    align-items: flex-start; /* Align content to the left */
+    margin: 0 auto; /* Center the container on the page */
+}
+.logo-container {
+    width: 100%; /* Ensures the container takes full width */
+    padding-left: 5%; /* Align with the gallery padding */
+    margin-bottom: 1rem; /* Add space between logo and gallery */
+    display: flex; 
+    align-items: flex-start; /* Align the text to the start */
 }
 
-/* Style the gallery itself */
-.gallery {
-    display: flex;        
-    height: 100%;    
-    position: center;
-    align-items: center;
-    justify-content: relative;
-    top: 0;
-    left: 0;
-}
-
-/* Style each image inside the gallery */
-.gallery img {
-    width: 95%; /* Image will take full width of the container */
-    height: 95%; /* Image will take full height of the container */
-    object-fit: fit; /* Ensure the image covers the entire area while maintaining its aspect ratio */
+.logo-container h3 {
     margin: 0;
-    opacity: 0; /* Initially hide all images */
-    transition: opacity 0.5s ease-in-out; /* Fade transition */
-    position: absolute; /* Position them on top of each other */
+    font-size: 1.2rem;
+    text-align: left; /* Ensure text aligns to the left */
+    display: inline-block; /* Prevent block-level stacking */
+    margin-right: 1rem; /* Space between text and image */
+    padding-left: 0; /* Ensure no padding to align exactly with the left margin of the page */
+}
+
+.gallery {
+    display: flex;
+    height: calc(100% - 2.5rem); /* Reduce height to account for the heading */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 5%;
+}
+
+/* Adjust each image inside the gallery */
+.gallery img {
+    width: 95%; /* Maintain responsive image sizing */
+    height: 95%;
+    object-fit: contain; /* Ensure images fit well */
+    margin: 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out;
+    position: absolute; /* Overlapping for transitions */
 }
 
 .gallery img.active {
-    opacity: 1; /* Only the active image will be visible */
+    opacity: 1; /* Only the active image is visible */
 }
 
 
-/* Add styling for navigation buttons */
 button.prev-btn, button.next-btn {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     background-color: var(--color1);
     color: var(--color1);
     border: none;
-    padding: 10px;
+    padding: 14px;    
     font-size: 16px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 1;
+    transition: transform 0.3s ease-in-out;
 }
 
 button.prev-btn {
-    left: 10px;
+    left: 10%;
 }
 
 button.next-btn {
-    right: 10px;
+    right: 5%;
 }
 
-/* Optional: Add hover effect on the buttons */
-button.prev-btn:hover, button.next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+/* Grow buttons horizontally on hover without shifting */
+button.prev-btn:hover, button.next-btn:hover {    
+    transform: scale(1.2); /* Scale only horizontally (x-axis) */
 }
